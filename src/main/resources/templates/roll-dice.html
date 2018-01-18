@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Roll Dice Exercise</title>
+</head>
+<body>
+<br />
+<!--<img src="img/rollerdie.png" />-->
+    <a href="roll-dice/1" method="GET"><img src="http://cdn5.dibujos.net/dibujos/pintados/201042/6dc3f90a7ce89e908907b42540d9d0ee.png" width="75px" /></a>
+    <a href="roll-dice/2" method="GET"><img src="http://cdn5.dibujos.net/dibujos/pintados/201127/85a3e1d99f0554a19fc810e603250372.png" width="75px" /></a>
+    <a href="roll-dice/3" method="GET"><img src="http://cdn5.dibujos.net/dibujos/pintados/201117/030db9841c2f41c2818cffde47624a61.png" width="75px" /></a>
+    <a href="roll-dice/6" method="GET"><img src="http://cdn5.dibujos.net/dibujos/pintados/201042/696f8cd9f8fa21eba809ede3ca4e2baf.png" width="75px" /></a>
+    <a href="roll-dice/4" method="GET"><img src="http://cdn5.dibujos.net/dibujos/pintados/201113/7fceb7b0a0931afd7352decc1ad5e0f1.png" width="75px" /></a>
+    <a href="roll-dice/5" method="GET"><img src="http://cdn5.dibujos.net/dibujos/pintados/201040/6a35f22ba67a90c8891637f16e8b7a63.png" width="75px" /></a>
+
+<br />
+Guess the Number!
+<br />
+<input class="form-control" type="number" th:name="${quantity}" min="1" max="6" />
+<br />
+<button type="submit">feel lucky?</button>
+<div th:if="${rollNumber}">
+
+</div>
+
+
+</body>
+</html>
