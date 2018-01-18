@@ -25,7 +25,7 @@ public class PostsController {
         return "The form to create a post";
     }
 
-    @RequestMapping
+    @RequestMapping("/posts/show")
     @ResponseBody
     public String createPost() {
         return "Store a post in the database";
