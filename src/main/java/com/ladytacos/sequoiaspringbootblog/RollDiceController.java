@@ -34,9 +34,9 @@ public class RollDiceController {
         boolean match = (roll == Integer.parseInt(quantity));
         viewModel.addAttribute("quantity", quantity);
         viewModel.addAttribute("match", match);
-        viewModel.addAttribute("roll", roll);
         viewModel.addAttribute("rollNumber", true);
-        return "";
+        viewModel.addAttribute("roll", roll);
+        return "roll-dice";
 
     }
 }
