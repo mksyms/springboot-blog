@@ -3,6 +3,7 @@ package com.ladytacos.sequoiaspringbootblog;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import java.util.Random;
 
@@ -20,24 +21,25 @@ import java.util.Random;
 public class RollDiceController {
 
     @GetMapping("/roll-dice")
-    public String index(Model viewModel) {
-        viewModel.addAttribute("rollNumber", true);
+    public String index() {
         return "roll-dice";
     }
-
 
     @GetMapping("/roll-dice/{quantity}")
     public String userInput(@PathVariable String quantity, Model viewModel) {
 
         Random rn = new Random();
         int roll = rn.nextInt(6 - 1 + 1) + 1;
-        boolean match = (roll == Integer.parseInt(quantity));
-        viewModel.addAttribute("quantity", quantity);
-        viewModel.addAttribute("match", match);
-        viewModel.addAttribute("rollNumber", true);
-        viewModel.addAttribute("roll", roll);
-        return "roll-dice";
+//          int rnd = (int) (Math.random() * 6 + 1);
 
+        boolean match = (roll == Integer.parseInt(quantity));
+//          boolean = win (rnd == match) ? true : false;
+
+        viewModel.addAttribute("quantity", quantity);
+        viewModel.addAttribute("roll", roll);
+        viewModel.addAttribute("match", match);
+
+        return "roll-dice";
     }
 }
 
