@@ -53,19 +53,23 @@ public class PostsController {
         return "posts/index";
     }
 
-    @RequestMapping("/posts/{id}")
-    public String viewIndividualPost(@PathVariable String id, Model vModel){
+    @GetMapping("/posts/{id}")
+    public String viewIndividualPost(@PathVariable Long id, Model vModel){
 //        Post post = new Post("Test post", "Test body");
-        Post post = new Post(1, "First Post", "Bringing it back to emotionally angsty LiveJournal Days!");
-        vModel.addAttribute("post", post);
-        vModel.addAttribute("id", id);
+//        Post post = postService.findPost(Long.parseLong(id));
+//        return "";
+
+//        Post post = new Post(1, "First Post", "Bringing it back to emotionally angsty LiveJournal Days!");
+//        vModel.addAttribute("post", post);
+//        vModel.addAttribute("id", id);
         return "posts/show";
     }
 
-    @RequestMapping("/posts/view")
-    @ResponseBody
-    public String viewCreateForm() {
-        return "View form to create a post";
+    @GetMapping("/posts/show")
+    public String showCreateForm(Model vModel) {
+        Post post = new Post("Test post", "Test body");
+        vModel.addAttribute("post", post);
+        return "posts/create";
     }
 
     @PostMapping("/posts/create")
