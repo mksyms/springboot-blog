@@ -9,11 +9,14 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 
-//    Dependency injection              //
+
+//    Dependency injection
+//
 // 1. Constructor injection (preferred) -> required dependencies
 // 2. Setter injection -> optional dependencies
 
-//    How to Approach a New Feature    //
+
+//    How to Approach a New Feature
 //
 // Page to search posts
 // 1. Create a form in the navigation bar
@@ -53,14 +56,16 @@ public class PostsController {
         return "posts/index";
     }
 
+    // findOne to use with CRUD Repo
     @GetMapping("/posts/{id}")
     public String viewIndividualPost(@PathVariable Long id, Model vModel){
 //        Post post = new Post("Test post", "Test body");
 //        Post post = postService.findPost(Long.parseLong(id));
 //        return "";
 
-//        Post post = new Post(1, "First Post", "Bringing it back to emotionally angsty LiveJournal Days!");
-//        vModel.addAttribute("post", post);
+        Post post = postService.findOne(id);
+
+        vModel.addAttribute("post", post);
 //        vModel.addAttribute("id", id);
         return "posts/show";
     }

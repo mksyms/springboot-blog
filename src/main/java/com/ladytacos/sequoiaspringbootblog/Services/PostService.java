@@ -18,7 +18,7 @@ public class PostService {
         createPosts();
     }
 
-    public Post findPost(long id) {
+    public Post findOne(long id) {
         return posts.get((int) id - 1);
     }
 
