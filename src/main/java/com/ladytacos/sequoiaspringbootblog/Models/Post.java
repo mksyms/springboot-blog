@@ -11,6 +11,12 @@ public class Post {
         this.body = body;
     }
 
+    // don't delete constructors!
+    public Post(String title, String body) {
+        this.title = title;
+        this.body = body;
+    }
+
     public long getId() {
         return id;
     }
